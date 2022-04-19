@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:jest/recommended",
+
+    // Prettier plugin and recommended rules
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks", "jest", "import", "react"],
+  "rules": {
+
+"@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+     "prefer-const": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-console": "off",
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+      "import/resolver": {
+        "typescript": {}
+      },
+      "import/parsers": {
+        "@typescript-eslint/parser": [" .ts", ".tsx "]
+      }
+    }
+  }
+}
