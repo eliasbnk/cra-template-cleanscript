@@ -5,7 +5,6 @@ This template is a cleaned version of the official TypeScript template for [Crea
 By clean I mean:
 
 - without files and folders that everyone usually deletes
-  (this made the template VERY LEAN, under 8kB compared to `cra-template-typescript` 32Kb)
 - with preconfigured eslint + stylelint + prettier + airbnb + husky + lint stage  ( running `yarn husky` enables pre-commit checking )
 - with preconfigured github workflow that runs both on macos and ubuntu
 

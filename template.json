@@ -48,33 +48,33 @@
     "scripts": {
   "format": "prettier --write",
   "husky": "husky install && husky add .husky/pre-commit 'yarn lint-staged'",
-    "lint": "tsc --noEmit && eslint --quiet --fix"
+    "lint": "tsc --project tsconfig.json --noEmit && eslint --quiet --fix"
 
 },
 
 "husky": {
-  "hooks": {
-    "pre-commit": "lint-staged --debug"
+    "hooks": {
+      "pre-commit": "lint-staged --debug"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,json,html,css}": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss"
+    ],
+    "*.{ts,tsx}": [
+      "bash -c tsc --project tsconfig.json --noEmit",
+      "eslint --quiet --fix"
+    ],
+    "*.{js,jsx}": [
+      "eslint --quiet --fix"
+    ]
   }
-},
-"lint-staged": {
-  "*.{js,jsx,ts,tsx,md,json,html,css}": [
-    "prettier --write"
-  ],
-  "*.css": [
-    "stylelint"
-  ],
-  "*.scss": [
-    "stylelint --syntax=scss"
-  ],
-  "*.{ts,tsx}": [
-    "bash -c tsc --noEmit",
-    "eslint --quiet --fix"
-  ],
-  "*.{js,jsx}": [
-    "eslint --quiet --fix"
-  ]
-}
 }
   }
 
